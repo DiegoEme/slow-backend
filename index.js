@@ -6,6 +6,7 @@ const cors = require("cors");
 const usuario = require("./routes/usuario");
 const auth = require("./routes/auth");
 const catalogo = require("./routes/catalogo");
+const ropa = require("./routes/ropa")
 
 //app
 const app = express();
@@ -14,6 +15,8 @@ app.use(express.json());
 app.use("/api/usuario/", usuario);
 app.use("/api/auth/", auth);
 app.use("/api/catalogo", catalogo);
+app.use("/api/ropa/", ropa)
+app.use("/public", express.static("public"))
 
 //puerto de ejecucion
 const port = process.env.PORT || 3000;
